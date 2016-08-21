@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://shop.vfl-wolfsburg.de/"));
                 startActivity(intent);
+
             }
         });
     }
