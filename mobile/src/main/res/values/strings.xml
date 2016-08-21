@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mario Gomez Button</string>
+
+    <string name="mario_gomez">Mario Gomez</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="ger_gomez_decl">Drück den Button bei jedem Tor von Mario Gomez!</string>
+    <string name="eng_gomez_decl">Push the button with every goal of Mario Gomez!</string>
+    <string name="esp_gomez_decl">¡Empuja el botón con cada objetivo de Mario Gomez!</string>
+    <string name="tur_gomez_decl">Her amacı ile düğmeye Mario Gomez!</string>
+    <string name="about">About</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5435840786706371/9548584445</string>
+
+
+</resources>

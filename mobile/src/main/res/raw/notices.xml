@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<notices>
+    <notice>
+        <name>Mario Gomez Button</name>
+        <copyright>Copyright (C) 2016 by Berger</copyright>
+    </notice>
+    <notice>
+        <name>Mario Gomez Image</name>
+        <url>https://shop.vfl-wolfsburg.de/</url>
+        <copyright>Copyright (C) 2016 by VfL Wolfsburg-Fußball GmbH</copyright>
+    </notice>
+    <notice>
+        <name>FButton</name>
+        <url>https://github.com/hoang8f/android-flat-button</url>
+        <copyright>   Copyright {2014} {Le Van Hoang}</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>HTextView</name>
+        <url>https://github.com/hanks-zyh/HTextView</url>
+        <copyright>Copyright (C) 2015 [Hanks](https://github.com/hanks-zyh)</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>KenBurnsView</name>
+        <url>https://github.com/flavioarfaria/KenBurnsView</url>
+        <copyright></copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+</notices>

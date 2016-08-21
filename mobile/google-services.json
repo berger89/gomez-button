@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "198972472869",
+    "firebase_url": "https://admob-app-id-8071851243.firebaseio.com",
+    "project_id": "admob-app-id-8071851243",
+    "storage_bucket": "admob-app-id-8071851243.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198972472869:android:ec2351d146474319",
+        "android_client_info": {
+          "package_name": "de.berger.gomezbutton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198972472869-v3qcjnnis9nnujf9sop8fsbra02l0msv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjrZH6-XhhUQWrllNyKp3WctJfM2Wcs9U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
