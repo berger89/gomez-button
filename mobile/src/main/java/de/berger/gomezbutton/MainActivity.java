@@ -5,13 +5,11 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
@@ -19,7 +17,6 @@ import com.flaviofaria.kenburnsview.Transition;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
@@ -28,8 +25,6 @@ import de.psdev.licensesdialog.LicensesDialog;
 public class MainActivity extends AppCompatActivity {
 
     private HTextView gomezTextView;
-    private ImageView gomezImage;
-    KenBurnsView gomezImageView;
     private Button playButton;
     private MediaPlayer mp2;
     private AdView adView;
@@ -54,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d("FirebaseIDService", "Refreshed token: " + refreshedToken);
+        //FMS Token
+//        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//        Log.d("FirebaseIDService", "Refreshed token: " + refreshedToken);
 
         initTextView();
 
@@ -112,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initImageView() {
-        gomezImageView = (KenBurnsView) findViewById(R.id.imageView);
+        KenBurnsView gomezImageView = (KenBurnsView) findViewById(R.id.imageView);
 
         RandomTransitionGenerator generator = new RandomTransitionGenerator(6000, new AccelerateDecelerateInterpolator());
         gomezImageView.setTransitionGenerator(generator);
