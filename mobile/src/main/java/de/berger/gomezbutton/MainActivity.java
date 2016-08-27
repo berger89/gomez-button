@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.flaviofaria.kenburnsview.Transition;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
@@ -52,12 +54,24 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("FirebaseIDService", "Refreshed token: " + refreshedToken);
+
         initTextView();
 
         initImageView();
 
         initPlayBtn();
 
+        Intent iin = getIntent();
+        Bundle b = iin.getExtras();
+
+        if (b != null) {
+            boolean startedFromWear = b.getBoolean("wear", false);
+            if (startedFromWear)
+                playButton.performClick();
+        }
     }
 
     @Override
@@ -129,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initPlayBtn() {
         playButton = (Button) this.findViewById(R.id.play_button);
-
 
 
         playButton.setOnClickListener(new View.OnClickListener() {
