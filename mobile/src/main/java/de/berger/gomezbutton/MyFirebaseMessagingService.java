@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -29,7 +30,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
         Notification notification = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.icon_mg)
+                .setSmallIcon(R.mipmap.gmicon)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.icon_mg2))
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setContentIntent(pi)
