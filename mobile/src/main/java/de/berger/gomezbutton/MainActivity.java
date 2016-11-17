@@ -22,6 +22,7 @@ import com.flaviofaria.kenburnsview.Transition;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button playButton;
     private MediaPlayer mp2;
     private AdView adView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +51,19 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-5435840786706371~8071851243");
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
         //FMS Token
-//        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-//        Log.d("FirebaseIDService", "Refreshed token: " + refreshedToken);
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("FirebaseIDService", "Refreshed token: " + refreshedToken);
 
         initTextView();
 
@@ -149,6 +155,13 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "play");
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "playBtn");
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
+
                 // If the music is playing
                 if (mp2.isPlaying() == true) {
                     // Pause the music player

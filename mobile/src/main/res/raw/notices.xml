@@ -3,7 +3,7 @@
 <notices>
     <notice>
         <name>Mario Gomez Button</name>
-        <copyright>Copyright (C) 2016 by Berger</copyright>
+        <copyright>Copyright (C) 2016 by www.berger-apps.de</copyright>
     </notice>
     <notice>
         <name>Mario Gomez Image</name>
@@ -27,5 +27,11 @@
         <url>https://github.com/flavioarfaria/KenBurnsView</url>
         <copyright></copyright>
         <license>Apache Software License 2.0</license>
+    </notice>
+    <notice>
+        <name>android-gif-drawable</name>
+        <url>https://github.com/koral--/android-gif-drawable</url>
+        <copyright>Copyright (c) 2016 Karol Wrótniak, Droids on Roids</copyright>
+        <license>MIT License</license>
     </notice>
 </notices>
