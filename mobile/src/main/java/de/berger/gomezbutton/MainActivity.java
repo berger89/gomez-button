@@ -1,27 +1,21 @@
 package de.berger.gomezbutton;
 
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
 import com.flaviofaria.kenburnsview.Transition;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanks.htextview.HTextView;
@@ -34,14 +28,16 @@ public class MainActivity extends AppCompatActivity {
     private HTextView gomezTextView;
     private Button playButton;
     private MediaPlayer mp2;
-    private AdView adView;
+    //    private AdView adView;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        setTitle("");
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mp2 = MediaPlayer.create(this, R.raw.mariogomez);
         mp2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
@@ -52,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5435840786706371~8071851243");
+//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5435840786706371~8071851243");
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        adView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+//        adView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
 
         //FMS Token
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
@@ -184,25 +180,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onPause() {
-        if (adView != null) {
-            adView.pause();
-        }
+//        if (adView != null) {
+//            adView.pause();
+//        }
         super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (adView != null) {
-            adView.resume();
-        }
+//        if (adView != null) {
+//            adView.resume();
+//        }
     }
 
     @Override
     public void onDestroy() {
-        if (adView != null) {
-            adView.destroy();
-        }
+//        if (adView != null) {
+//            adView.destroy();
+//        }
         super.onDestroy();
     }
 }
