@@ -22,10 +22,6 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
-import com.pollfish.main.PollFish;
-import com.pollfish.main.PollFish.ParamsBuilder;
-import com.pollfish.constants.Position;
-
 import de.psdev.licensesdialog.LicensesDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -197,8 +193,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        //POLLFISH
-        PollFish.initWith(this, new ParamsBuilder("5c490db4-7db6-4a59-8128-96dc0d85e884").releaseMode(true).build());
         //        if (adView != null) {
         //            adView.resume();
         //        }

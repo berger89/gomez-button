@@ -34,7 +34,7 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@mipmap/title_image"
+        android:src="@mipmap/gomez"
         ads:layout_constraintRight_toRightOf="parent"
         ads:layout_constraintLeft_toLeftOf="parent"
         ads:layout_constraintBottom_toTopOf="@+id/play_button"
