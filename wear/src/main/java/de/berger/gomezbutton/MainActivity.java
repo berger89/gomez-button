@@ -15,11 +15,12 @@ import java.util.List;
 
 import pl.droidsonroids.gif.GifImageView;
 
+/**
+ * Wear Activity.
+ */
 public class MainActivity extends WearableActivity {
 
     private GoogleApiClient mGoogleApiClient;
-
-    private GifImageView btnAlpha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +28,14 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
                 .build();
         mGoogleApiClient.connect();
 
-        btnAlpha = (GifImageView) findViewById(R.id.imageView);
-
+        //init Button
+        GifImageView btnAlpha = (GifImageView) findViewById(R.id.imageView);
         btnAlpha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,22 +63,6 @@ public class MainActivity extends WearableActivity {
                 }
             }
         });
-    }
-
-
-    @Override
-    public void onEnterAmbient(Bundle ambientDetails) {
-        super.onEnterAmbient(ambientDetails);
-    }
-
-    @Override
-    public void onUpdateAmbient() {
-        super.onUpdateAmbient();
-    }
-
-    @Override
-    public void onExitAmbient() {
-        super.onExitAmbient();
     }
 
 }

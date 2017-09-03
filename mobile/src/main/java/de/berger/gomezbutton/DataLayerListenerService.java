@@ -6,7 +6,7 @@ import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.WearableListenerService;
 
 /**
- * Created by Berger on 22.08.2016.
+ * ListenerService um die App über die Wear zu starten.
  */
 public class DataLayerListenerService extends WearableListenerService {
 

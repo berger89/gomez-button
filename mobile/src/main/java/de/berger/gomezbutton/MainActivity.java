@@ -24,12 +24,18 @@ import com.hanks.htextview.HTextViewType;
 
 import de.psdev.licensesdialog.LicensesDialog;
 
+/**
+ * @author berger
+ *
+ * MainActivity Mario Gomez Button.
+ */
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = "GOMEZBUTTON";
 
     private HTextView gomezTextView;
     private Button playButton;
     private MediaPlayer mp2;
-    //    private AdView adView;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
@@ -49,14 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5435840786706371~8071851243");
-
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
-//        adView = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        adView.loadAd(adRequest);
 
         //FMS Token
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
@@ -68,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
         initPlayBtn();
 
-        Intent iin = getIntent();
-        Bundle b = iin.getExtras();
+        //Android Wear Intent
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
 
-        if (b != null) {
-            boolean startedFromWear = b.getBoolean("wear", false);
+        if (bundle != null) {
+            boolean startedFromWear = bundle.getBoolean("wear", false);
             if (startedFromWear)
                 playButton.performClick();
         }
@@ -87,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Wir prüfen, ob Menü-Element mit der ID "action_daten_aktualisieren"
-        // ausgewählt wurde und geben eine Meldung aus
+        //License Dialog
         int id = item.getItemId();
         if (id == R.id.about_menuitem) {
             new LicensesDialog.Builder(this)
@@ -108,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
         this.finish();
     }
 
+    /**
+     * TextView initialisieren.
+     */
     private void initTextView() {
         gomezTextView = (HTextView) findViewById(R.id.text);
         // be sure to set custom typeface before setting the animate type, otherwise the font may not be updated.
@@ -115,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
         gomezTextView.animateText("Mario Gomez Button"); // animate
     }
 
+    /**
+     * ImageView initialisieren.
+     */
     private void initImageView() {
         KenBurnsView gomezImageView = (KenBurnsView) findViewById(R.id.imageView);
 
@@ -123,12 +129,12 @@ public class MainActivity extends AppCompatActivity {
         gomezImageView.setTransitionListener(new KenBurnsView.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {
-
+                //..
             }
 
             @Override
             public void onTransitionEnd(Transition transition) {
-
+                //..
             }
         });
 
@@ -143,11 +149,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
                     e.printStackTrace();
+                    Log.e(TAG, e.getMessage());
                 }
             }
         });
     }
 
+    /**
+     * Play Button initialisieren
+     */
     private void initPlayBtn() {
         playButton = (Button) this.findViewById(R.id.play_button);
 
@@ -161,13 +171,11 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
                 mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
-
                 // If the music is playing
-                if (mp2.isPlaying() == true) {
+                if (mp2.isPlaying()) {
                     // Pause the music player
                     mp2.pause();
                     playButton.setText("Play");
-//                    gomezImage.setVisibility(View.INVISIBLE);
                 }
                 // If it's not playing
                 else {
@@ -175,8 +183,6 @@ public class MainActivity extends AppCompatActivity {
                     mp2.start();
                     playButton.setText("Pause");
                     gomezTextView.animateText("Mario Gomez Button"); // animate
-
-//                    gomezImage.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -184,25 +190,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onPause() {
-//        if (adView != null) {
-//            adView.pause();
-//        }
         super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        //        if (adView != null) {
-        //            adView.resume();
-        //        }
     }
 
     @Override
     public void onDestroy() {
-//        if (adView != null) {
-//            adView.destroy();
-//        }
         super.onDestroy();
     }
 }
