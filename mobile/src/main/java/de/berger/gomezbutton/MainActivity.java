@@ -148,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
                     intent.setData(Uri.parse("https://shop.vfl-wolfsburg.de/"));
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
-                    e.printStackTrace();
                     Log.e(TAG, e.getMessage());
                 }
             }
