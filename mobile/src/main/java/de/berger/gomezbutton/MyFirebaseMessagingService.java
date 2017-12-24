@@ -29,7 +29,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
         Notification notification = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.gmicon)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.icon_mg2))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.icon_mg_vfb))
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setContentIntent(pi)

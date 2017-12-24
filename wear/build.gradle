@@ -9,8 +9,8 @@ android {
         applicationId "de.berger.gomezbutton"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 11
-        versionName "4.5"
+        versionCode 15
+        versionName "4.9"
         multiDexEnabled true
 
     }
@@ -28,5 +28,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-wearable:10.0.1'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
     compile 'com.android.support:support-core-utils:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
 }

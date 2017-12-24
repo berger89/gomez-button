@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setAction(Intent.ACTION_VIEW);
                     intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                    intent.setData(Uri.parse("https://shop.vfl-wolfsburg.de/"));
+                    intent.setData(Uri.parse("https://shop.vfb.de/"));
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
                     Log.e(TAG, e.getMessage());
