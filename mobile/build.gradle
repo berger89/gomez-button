@@ -1,14 +1,21 @@
 apply plugin: 'com.android.application'
 android {
+    signingConfigs {
+        config {
+            keyAlias 'bergerapps'
+            keyPassword 'mast3rArbe1t2016'
+            storeFile file('/Users/berger/Documents/development/keystore/new_keystore/new_keystore')
+            storePassword 'mast3rArbe1t2016'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion '25.0.0'
-
     defaultConfig {
         applicationId "de.berger.gomezbutton"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 15
-        versionName "4.9"
+        versionCode 16
+        versionName "5.0"
         // Enabling multidex support.
         multiDexEnabled true
     }
@@ -16,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     dexOptions {
@@ -24,7 +32,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     wearApp project(':wear')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:multidex:1.0.1'
@@ -33,11 +41,12 @@ dependencies {
     compile 'hanks.xyz:htextview-library:0.1.5'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
     compile 'com.google.android.gms:play-services:10.0.1'
-    compile('de.psdev.licensesdialog:licensesdialog:1.8.1')
+    compile 'de.psdev.licensesdialog:licensesdialog:1.8.1'
     compile 'com.google.firebase:firebase-core:9.4.0'
     compile 'com.google.firebase:firebase-ads:9.4.0'
     compile 'com.google.firebase:firebase-auth:9.4.0'
-    compile 'com.google.firebase:firebase-messaging:9.4.0'                   // this line must be included to use FCM
+    compile 'com.google.firebase:firebase-messaging:9.4.0'
+    // this line must be included to use FCM
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }
 
