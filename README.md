@@ -1,7 +1,7 @@
 Android Mario Gomez Button
 =========================
 
-# <img src="https://lh3.googleusercontent.com/Uc4v9DJNmTPiy0pUanxHlV0qJ8Ew4YKHXDxxPzX1ltFFUOdnbsOxfrgVPOV7GJxn7PSu=h900" width="350"> <img src="https://lh3.googleusercontent.com/1QJxfBPN66vzNq99irN8A8JsXMhRaHTDlTCTNH4Q4q1VenoAjaXBdbUhOrjikcvzSH0=h900" width="350">
+# <img src="https://lh3.googleusercontent.com/pR2nMuytdIurobaUiPiKpNzodnQTnToAA7R6KobF1BoewaLr54mNILKl7ioeda-PvTJz=h900-rw" width="350"> <img src="https://lh3.googleusercontent.com/l5TZWzAbTq2trci5MjuRNU51_5FEkxIse3Y6e1pIp-WFmMCayatIZyMddirGog3VAuA=h900-rw" width="350">
 
 GooglePlay
 https://play.google.com/store/apps/details?id=de.berger.gomezbutton&hl=de
