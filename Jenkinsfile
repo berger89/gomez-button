@@ -10,6 +10,10 @@ pipeline {
   }
 
   stages {
+    stage('Checkout') {
+        // Pull the code from the repo
+        checkout scm
+    }
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
