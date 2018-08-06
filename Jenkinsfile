@@ -1,4 +1,3 @@
-Jenkinsfile
 pipeline {
   agent {
     // Run on a build agent where we have the Android SDK installed
@@ -8,12 +7,7 @@ pipeline {
     // Stop the build early in case of compile or test failures
     skipStagesAfterUnstable()
   }
-
   stages {
-    stage('Checkout') {
-        // Pull the code from the repo
-        checkout scm
-    }
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
@@ -72,7 +66,7 @@ pipeline {
       post {
         success {
           // Notify if the upload succeeded
-          // mail to: 'beta-testers@example.com', subject: 'New build available!', body: 'Check it out!'
+          mail to: 'beta-testers@example.com', subject: 'New build available!', body: 'Check it out!'
         }
       }
     }
@@ -80,7 +74,7 @@ pipeline {
   post {
     failure {
       // Notify developer team of the failure
-      // mail to: 'android-devs@example.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
+      mail to: 'android-devs@example.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
     }
   }
 }
