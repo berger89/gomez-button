@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        sh 'tools/bin/sdkmanager --licenses'
+        sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/android update sdk -u'
         sh 'chmod +x gradlew'
         // Compile the app and its dependencies
         sh './gradlew compileDebugSources'
