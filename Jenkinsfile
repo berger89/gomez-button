@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
+        chmod +x gradlew
         // Compile the app and its dependencies
         sh './gradlew compileDebugSources'
       }
