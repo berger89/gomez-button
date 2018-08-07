@@ -9,7 +9,6 @@ pipeline {
     stage('Compile') {
       steps {
         sh 'chmod +x gradlew'
-        sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/android update sdk -u'
         // Compile the app and its dependencies
         sh './gradlew compileDebugSources'
       }
