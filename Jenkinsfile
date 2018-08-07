@@ -65,7 +65,7 @@ pipeline {
       post {
         success {
           // Notify if the upload succeeded
-          mail to: 'beta-testers@example.com', subject: 'New build available!', body: 'Check it out!'
+          // mail to: 'beta-testers@example.com', subject: 'New build available!', body: 'Check it out!'
         }
       }
     }
