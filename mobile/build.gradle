@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'bergerapps'
+            keyAlias ''
             keyPassword ''
-            storeFile file('/Users/berger/Documents/development/keystore/new_keystore/new_keystore')
+            storeFile file('')
             storePassword ''
         }
     }
